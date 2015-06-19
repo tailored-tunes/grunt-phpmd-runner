@@ -2,7 +2,7 @@ language: node_js
 node_js:
 - '0.12'
 install: "npm install"
-script: "grunt"
+script: "./node_modules/.bin/grunt"
 before_deploy: "npm version $TRAVIS_TAG"
 deploy:
   provider: npm
