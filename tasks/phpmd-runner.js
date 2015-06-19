@@ -81,7 +81,9 @@ module.exports = function (grunt) {
 		if (!_.isEmpty(workFiles)) {
 			opt['shell.phpmd-runner'] = {
 				options: {
-					callback: log
+					callback: log,
+					stderr: false,
+					stdout: false
 				},
 				command: command(options, workFiles)
 			};
