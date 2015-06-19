@@ -24,7 +24,7 @@ In your project's Gruntfile, add a section named `phpmd-runner` to the data obje
 
 ```js
 grunt.initConfig({
-  phpmd-runner: {
+  'phpmd-runner': {
     options: {
       // Task-specific options go here.
     },
@@ -42,7 +42,7 @@ phpmd currently doesn't support individual files to deal with.
 
 ```js
 grunt.initConfig({
-  phpmd-runner: {
+  'phpmd-runner': {
     options: {
       phpmd: 'vendor/bin/phpmd',
       reportFormat: 'xml',
@@ -58,6 +58,35 @@ grunt.initConfig({
       strict: true
     },
     files: '**/*.php'
+  }
+});
+```
+
+### A watch config that runs phpmd on the files that have changed
+```js
+grunt.initConfig({
+  watch: {
+    php: {
+      files: '**/*.php',
+      tasks: [
+        'phpmd-runner'
+      ],
+      options: {
+        spawn: false
+      }
+    }
+  },
+  'phpmd-runner': {
+    options: {
+      phpmd: 'vendor/bin/phpmd'
+    },
+    files: '**.*.php'
+  }
+});
+
+grunt.event.on('watch', function (action, filepath) {
+  if (grunt.file.isMatch(grunt.config('watch.php.files'), filepath)) {
+    grunt.config('phpmd-runner.files', [filepath]);
   }
 });
 ```
@@ -122,5 +151,6 @@ Equivalent of:
 In lieu of a formal styleguide, take care to maintain the existing coding style. Add unit tests for any new or changed functionality. Lint and test your code using [Grunt](http://gruntjs.com/).
 
 ## Release History
+* 0.1.3 - added watch config
 * 0.1.2 - no duplicate output
 * 0.1.0 - basic functionality
