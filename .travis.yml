@@ -3,7 +3,6 @@ node_js:
 - '0.12'
 install: "npm install"
 script: "./node_modules/.bin/grunt"
-before_deploy: "npm config set git-tag-version false && npm version $TRAVIS_TAG"
 deploy:
   provider: npm
   email: 'hello@tailored-tunes.com'
