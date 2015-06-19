@@ -1,6 +1,10 @@
 language: node_js
 node_js:
 - '0.12'
+before_install: "npm version $TRAVIS_TAG"
+install: "npm install"
+script: "grunt"
+
 deploy:
   provider: npm
   email: 'hello@tailored-tunes.com'
