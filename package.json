@@ -1,7 +1,7 @@
 {
   "name": "grunt-phpmd-runner",
   "description": "A phpmd runner that works",
-  "version": "0.1.0",
+  "version": "0.0.2",
   "homepage": "https://github.com/tailored-tunes/grunt-phpmd-runner",
   "author": {
     "name": "meza",
