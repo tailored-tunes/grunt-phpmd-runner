@@ -1,0 +1,16 @@
+language: node_js
+node_js:
+- '0.12'
+install: "npm install"
+script: "./node_modules/.bin/grunt"
+deploy:
+  provider: npm
+  email: 'hello@tailored-tunes.com'
+  api_key:
+    secure: 'dGFpbG9yZWQtdHVuZXM6KnRoZXJlZHAxbGwq'
+  clean_up: false
+  on:
+    tags: true
+    all_branches: true
+    node: '0.12'
+    repo: tailored-tunes/grunt-phpmd-runner
