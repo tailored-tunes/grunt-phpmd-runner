@@ -151,6 +151,7 @@ Equivalent of:
 In lieu of a formal styleguide, take care to maintain the existing coding style. Add unit tests for any new or changed functionality. Lint and test your code using [Grunt](http://gruntjs.com/).
 
 ## Release History
+* 0.1.4 - Fixed proper logging and quitting on error
 * 0.1.3 - added watch config
 * 0.1.2 - no duplicate output
 * 0.1.0 - basic functionality
