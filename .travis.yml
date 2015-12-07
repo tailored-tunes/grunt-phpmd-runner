@@ -1,0 +1,16 @@
+language: node_js
+node_js:
+- '0.12'
+install: "npm install"
+script: "./node_modules/.bin/grunt"
+deploy:
+  provider: npm
+  email: 'hello@tailored-tunes.com'
+  api_key:
+    secure: "lQ+z0L/1n2nfCcenCVbgH/e0qAo4aqDGOMBKc4KCGL+H6ekQ/WzPxMmStSPctwS2JV07thbkiQFs3mhi/NxpgBj6XGwdgjGbApegw83qy/Bg2gmJuRPvhgx7Raxweb7XnRq6SOx/I0hrscF+9VsV9CGy2rE3wRNIzbeMhePU53G4cjhxQLXadkB64D2Kp6S5z/4/QXqH8JgEhNbFUPkv5pQXFjGNm5qCO2TmzosL8O6xWyiGRVO/xoeIhRom9ixRQHCiGP3BTNKhhX+S3HIyqfBF08nqhj4fHatoWHLHQ+lRh6TCFQUua+bBih5nTD7WhJVGs9D8S4LaxkVKA832KUOhemy7mo+hUz91DrRyoF2hQBwCv69SNjGsxwR4pkx07fa1PcfMmDgLs41VhrtuxxV1gPiDPNaRZUGYE6WIBoRdk+81EwoaLyidPq/2919Qo00nt+x4ttpHAyiZyl2VAFywtR4H6x2imfMb0Rq+XmT7VMTPHoUhsiwZjlpfZ8PSFBoM6jEzYBbdVDlheTi4eh8P0M+JNCvYA9jAb25kYmlGgS/WQIIbPLxEKoD82nDBuWgOzgKg6cFc02PWR0bVfZ3Uy4GBnCJPqOP67cexGUlZAxO9WdOqSRuanEp/HkyGrirIMU9qGAffnVdhYVZmypv8ebos6vnSg/aamzXscKw="
+  clean_up: false
+  on:
+    tags: true
+    all_branches: true
+    node: '0.12'
+    repo: tailored-tunes/grunt-phpmd-runner
